@@ -1,0 +1,17 @@
+version: '2'
+
+#volumes:
+#  gl:
+#    driver_opts:
+#      device: ${PWD}/gl
+#      type: none
+#      o: bind
+
+services:
+  ffmpeg:
+    build: docker-images/3.4/vaapi/
+    image: unclev/ffmpeg-hwaccel:3.4
+    volumes:
+     - '/dev/dri:/dev/dri'
+#     - 'gl:/gl'
+
